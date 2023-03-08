@@ -50,11 +50,11 @@ int main(void) {
 
   /***TME3*/
 
-  ecrire_ecosys("test_ecosys.txt", liste_predateur, liste_proie);
+  ecrire_ecosys("./input_output/test_ecosys.txt", liste_predateur, liste_proie);
 
   Animal *liste_proie2= NULL;
   Animal *liste_predateur2 = NULL;
-  lire_ecosys("test_ecosys.txt", &liste_predateur2, &liste_proie2);
+  lire_ecosys("./input_output/test_ecosys.txt", &liste_predateur2, &liste_proie2);
 
   afficher_ecosys(liste_proie2,liste_predateur2);
 

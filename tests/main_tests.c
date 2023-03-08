@@ -9,8 +9,6 @@
 
 
 
-
-
 int main(void) {
   //int i;
   Animal *liste_proie = NULL;

@@ -1,39 +1,38 @@
-CFLAGS = -g -Wall -Wextra -pedantic -Wno-unused-parameter
-#CFLAGS = -g -Wno-unused-parameter
 CC = gcc
+CFLAGS = -g -Wall -Wextra -pedantic -I /include
+PROGRAMS = bin/ecosys.exe bin/tests_ecosys.exe bin/tests_ecosys2.exe
 
-PROGRAMS =   tests_ecosys ecosys
-
-.PHONY:	all clean
-
+# Default target
 all: $(PROGRAMS)
 
-tests_ecosys: ecosys.o main_tests.o
-	$(CC) -o $@ $(CFLAGS) $^
+# Link ecosys executable
+bin/ecosys.exe: build/ecosys.o build/main_ecosys.o
+	$(CC) $(CFLAGS) $^ -o $@ 
 
-tests_ecosys2: ecosys.o main_tests2.o
-	$(CC) -o $@ $(CFLAGS) $^
+# Link tests_ecosys executable
+bin/tests_ecosys.exe: build/ecosys.o build/main_tests.o
+	$(CC) $(CFLAGS) $^ -o $@
 
-ecosys: ecosys.o main_ecosys.o
-	$(CC) -o $@ $(CFLAGS) $^
+bin/tests_ecosys2.exe: build/ecosys.o build/main_tests2.o
+	$(CC) $(CFLAGS) $^ -o $@
 
-ecosys.o: ecosys.c
-	gcc $(CFLAGS) -c ecosys.c
+# Compile ecosys.c to ecosys.o
+build/ecosys.o: src/ecosys.c include/ecosys.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
-main_tests.o: main_tests.c
-	gcc $(CFLAGS) -c main_tests.c
+# Compile main_ecosys.c to main_ecosys.o
+build/main_ecosys.o: src/main_ecosys.c include/ecosys.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
-main_ecosys.o: main_ecosys.c 
-	gcc $(CFLAGS) -c main_ecosys.c
+# Compile main_tests.c to main_tests.o
+build/main_tests.o: tests/main_tests.c include/ecosys.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
-main_tests2.o: main_tests2.c
-	gcc $(CFLAGS) -c main_tests2.c
+build/main_tests2.o: tests/main_tests2.c include/ecosys.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
-
-#Ou plus simplement
-#%.o:%.c %.h
-#	$(CC)  $(GCC_FLAGS) -c  $<
-
-
+# Clean up object files and executables
 clean:
-	rm -f *.o *~ $(PROGRAMS)
+	rm -f $(PROGRAMS) build/*.o
+
+.PHONY: all clean

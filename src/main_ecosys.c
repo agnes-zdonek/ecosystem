@@ -89,7 +89,7 @@ int main(void) {
 
   int j = 0; 
   FILE *f;
-  f = fopen("Evol_Pop.txt", "w"); 
+  f = fopen("./input_output/Evol_Pop.txt", "w"); 
 
   if(f == NULL)
    {
@@ -115,12 +115,6 @@ int main(void) {
   liste_predateur = liberer_liste_animaux(liste_predateur);
 
   
-  /*
-   * exercice 6, question 2
-   * exercice 7, question 3
-   * exercice 8, question 1
-   */
-
   return 0;
 }
 
