@@ -1,5 +1,5 @@
 # Ecosystem
-Simulation of a predator-prey ecosystem done in pure c 
+Simulation of a predator-prey ecosystem done in c 
 
 Make sure you've installed makefile on your machine :)\
 To test functions independently:\
