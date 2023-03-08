@@ -36,7 +36,7 @@ int main(void) {
     }
   }
  
-  /*Part 2: exercice 4, question 2 */
+  
   Animal *ani_troc = creer_animal(0, 0, 21.37);
   ani_troc->dir[0] = 1;
   ani_troc->dir[1] = 1;
@@ -44,7 +44,7 @@ int main(void) {
   printf("animal ani: x %d, y %d\n", ani_troc->x, ani_troc->y);
   liberer_liste_animaux(ani_troc);
 
-  /*exercice 4, question 4 */
+ 
 
   Animal *liste_reproduction = NULL;
 
@@ -70,7 +70,7 @@ int main(void) {
   
   printf("\n\n~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ \n\n");
 
-  /*exercice 6, question 3  */
+ 
 
   Animal *liste_proie = NULL;
   Animal *liste_predateur = NULL;
