@@ -4,7 +4,13 @@
 
 #include <string.h>
 
-#include "ecosys.h"
+#include "../include/ecosys.h"
+
+
+const float p_ch_dir=0.01;
+const float p_reproduce_proie=0.3;
+const float p_reproduce_predateur=0.1;
+const int temps_repousse_herbe=-25;
 
 
 /* PARTIE 1*/

@@ -5,10 +5,10 @@
 #define SIZE_X 20
 #define SIZE_Y 50
 
-float p_ch_dir=0.01;
-float p_reproduce_proie=0.3;
-float p_reproduce_predateur=0.1;
-int temps_repousse_herbe=-25;
+extern const float p_ch_dir;
+extern const float p_reproduce_proie;
+extern const float p_reproduce_predateur;
+extern const int temps_repousse_herbe;
 
 typedef struct _animal {
   int x;

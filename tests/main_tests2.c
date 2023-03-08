@@ -4,7 +4,7 @@
 
 #include <string.h>
 
-#include "ecosys.h"
+#include "../include/ecosys.h"
 
 #define NB_PROIES 20
 #define NB_PREDATEURS 20

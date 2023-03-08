@@ -5,7 +5,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <strings.h>
-#include "ecosys.h"
+#include "../include/ecosys.h"
 
 
 

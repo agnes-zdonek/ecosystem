@@ -5,12 +5,14 @@
 #include <time.h>
 
 
-#include "ecosys.h"
+#include "../include/ecosys.h"
+
+
 
 
 
 int main(void) {
-  int i;
+  //int i;
   Animal *liste_proie = NULL;
   Animal *liste_predateur = NULL;
   int energie=10;
