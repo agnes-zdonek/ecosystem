@@ -1,5 +1,6 @@
 # Ecosystem :tiger2: :mouse2: :herb:
 #### This project is a simulation of a predator-prey-plants relationship done in c.
+##### Functions are commented on in /include/ecosys.h
 
 ## Description 
 A predator-prey ecosystem is a community where the predators, hunt, kill, and consume another group of known as prey. The predators rely on the prey for their survival and play an essential role in controlling the prey population. At the same time, the prey is critical to the predator's food source. The interaction between predators and prey is dynamic, with each species adapting to the other over time, resulting in a complex, balanced ecosystem.
