@@ -14,10 +14,11 @@ or
 `./bin/tests_ecosys2`
 
 To see the simulation:\
+you need to supply two arguments: number of maximum iterations & starting number for prey & predators\
 `make`\
-`./bin/ecosys`
+`./bin/ecosys 100 50`
 
-Every iteration is printed out in a console - you can specify how many cycles you want to go through in the code. 
+Every iteration is printed out in a console:
 
 - * - at least one prey
 - O - at least one predator
