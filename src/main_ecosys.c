@@ -25,7 +25,15 @@ void generate_rand_x_y_energy(int *x, int *y, float *energy, int type) {
 }
 
  
-int main(void) {
+int main(int argc, char* argv[]) {
+
+  if(argc!=3){
+        printf("\nyou need to supply two arguments: number of maximum iterations & starting number for prey & predators");
+        exit(1);
+  }
+  clear_screen();
+  printf("\nyou have chosen %s iterations, %s of predators and %s of prey, wait 5 seconds\n", argv[1], argv[2], argv[2]);
+  sleep(5);
 
   //srand(time(NULL));
 
@@ -36,47 +44,12 @@ int main(void) {
     }
   }
  
-  
-  Animal *ani_troc = creer_animal(0, 0, 21.37);
-  ani_troc->dir[0] = 1;
-  ani_troc->dir[1] = 1;
-  bouger_animaux(ani_troc);
-  printf("animal ani: x %d, y %d\n", ani_troc->x, ani_troc->y);
-  liberer_liste_animaux(ani_troc);
-
- 
-
-  Animal *liste_reproduction = NULL;
-
-  for(int i = 0; i < 2; i++){
-    int x,y;
-    float energie;
-    generate_rand_x_y_energy(&x,&y,&energie,0);
-    ajouter_animal(x, y, energie, &liste_reproduction);
-  }
-
-  printf("\n\n~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ \n\n");
-
-  printf("%d ",compte_animal_rec(liste_reproduction));
-  reproduce(&liste_reproduction, 1.0);
-  printf("%d ",compte_animal_rec(liste_reproduction));
-  reproduce(&liste_reproduction, 1.0);
-  printf("%d ",compte_animal_rec(liste_reproduction));
-  reproduce(&liste_reproduction, 1.0);
-  printf("%d ",compte_animal_rec(liste_reproduction));
- 
-
-  liste_reproduction = liberer_liste_animaux(liste_reproduction);
-  
-  printf("\n\n~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ \n\n");
-
- 
 
   Animal *liste_proie = NULL;
   Animal *liste_predateur = NULL;
 
   
-  for(int i = 0; i < 200; i++){
+  for(int i = 0; i < atoi(argv[2]); i++){
     int x,y;
     float energie;
     generate_rand_x_y_energy(&x,&y,&energie,0);
@@ -99,7 +72,7 @@ int main(void) {
 
   fprintf(f, "%d %d %d \n", j, compte_animal_it(liste_proie), compte_animal_it(liste_predateur));
 
-  while(j!=200 && liste_proie!=NULL){
+  while(j!=atoi(argv[1]) && liste_proie!=NULL){
     rafraichir_proies(&liste_proie, map);
     rafraichir_predateurs(&liste_predateur, &liste_proie);
     afficher_ecosys(liste_predateur, liste_proie); 
