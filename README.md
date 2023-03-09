@@ -19,9 +19,9 @@ To see the simulation:\
 
 Every iteration is printed out in a console - you can specify how many cycles you want to go through in the code. 
 
-* - at least one prey
-O - at least one predator
-@ - at least one prey & one predator
+- * - at least one prey
+- O - at least one predator
+- @ - at least one prey & one predator
 
 ## Credits
 This project was done for 'advanced C programming' I took in the third semester of my bachelor's degree in computer science
